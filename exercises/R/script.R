@@ -1,6 +1,9 @@
-setwd("../../montesmariana/r-best-practices-exercises/data")
+install.packages("here")
+library(here)
 
-df<-read.csv( "Flight Subset 2013.csv")
+
+df<-read.csv(here("exercises", "data", "Flight Subset 2013.csv"))
+datafame <- df
 df$month_name = month.name[df$month]
 df$carrier <- as.factor(df$carrier)
 df$tailnum <- as.factor(df$tailnum)
